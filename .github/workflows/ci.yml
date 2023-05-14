@@ -1,0 +1,55 @@
+name: Ci Job
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request_target:
+
+env:
+  IS_PACKAGE: ${{ secrets.IS_PACKAGE }}
+
+jobs:
+  review-and-test:
+    name: lint / tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [ 18 ]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.version }}
+          registry-url: "https://npm.pkg.github.com/"
+          cache: yarn
+      - name: Yarn Install
+        run: yarn
+      - if: ${{ github.event_name == 'pull_request' }}
+        name: Review Dog Pull Request
+        uses: reviewdog/action-eslint@v1
+        with:
+          reporter: github-pr-review
+          github_token: ${{ secrets.GH_TOKEN }}
+          eslint_flags: '--ext .js,.jsx,.ts,.tsx,.json,.jsonc,.json5,.yml,.yaml,.xml,.txt,.svg,.properties,.gradle,.java,.cpp,.c,.cs,.html,.css,.groovy,.gitignore,.npmignore,.toml,.env,.example,.sample,.ini,.php,.bat,.powershell,.ps1,.sh,.bash,.eslintrc .'
+          fail_on_error: true
+      - name: Build Code
+        run: yarn build
+      - name: Run Tests
+        run: "yarn test:ci"
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+          verbose: true
+      - name: Check valid to semantic-release
+        if: ${{ github.event_name == 'push' && env.IS_PACKAGE == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn semantic-release
