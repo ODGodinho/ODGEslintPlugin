@@ -2,5 +2,18 @@
     "env": {
         "jest": true
     },
-    "extends": [ "@odg" ]
+    "extends": [ "@odg" ],
+    "ignorePatterns": [ "tests/jest/no-inconsistent-docblock/cases/*.ts" ],
+    "overrides": [
+        {
+            "files": [ "./src/rules/*.ts" ],
+            "rules": {
+                "@typescript-eslint/naming-convention": "off"
+            }
+        }
+    ],
+    "plugins": [ "@odg" ],
+    "rules": {
+        "@odg/no-inconsistent-docblock": [ "error" ]
+    }
 }

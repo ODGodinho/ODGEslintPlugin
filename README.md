@@ -6,22 +6,22 @@
         />
     </a>
     <br />
-    Stanley The Template For Typescript By Dragons Gamers
+    ODG linter Plugin
     <br />
 </h1>
 
-<h4 align="center">Template Stanley for Typescript projects and packages 📦!</h4>
+<h4 align="center">My Custom rules for eslint-plugin!</h4>
 
 <p align="center">
 
-[![codecov](https://codecov.io/gh/ODGodinho/Stanley-TheTemplate-Typescript/branch/main/graph/badge.svg?token=HNBNLLPZ3J)](https://codecov.io/gh/ODGodinho/Stanley-TheTemplate-Typescript)
-[![Stargazers](https://img.shields.io/github/stars/ODGodinho/Stanley-TheTemplate-Typescript?color=F430A4)](https://github.com/ODGodinho/Stanley-TheTemplate-Typescript/stargazers)
+[![codecov](https://codecov.io/gh/ODGodinho/ODGEslintPlugin/branch/main/graph/badge.svg?token=HNBNLLPZ3J)](https://codecov.io/gh/ODGodinho/ODGEslintPlugin)
+[![Stargazers](https://img.shields.io/github/stars/ODGodinho/ODGEslintPlugin?color=F430A4)](https://github.com/ODGodinho/ODGEslintPlugin/stargazers)
 [![Made by ODGodinho](https://img.shields.io/badge/made%20by-ODGodinho-%2304A361)](https://www.linkedin.com/in/victor-alves-odgodinho/)
-[![Forks](https://img.shields.io/github/forks/ODGodinho/Stanley-TheTemplate-Typescript?color=CD4D34)](https://github.com/ODGodinho/Stanley-TheTemplate-Typescript/network/members)
-![Repository size](https://img.shields.io/github/repo-size/ODGodinho/Stanley-TheTemplate-Typescript)
-[![GitHub last commit](https://img.shields.io/github/last-commit/ODGodinho/Stanley-TheTemplate-Typescript)](https://github.com/ODGodinho/Stanley-TheTemplate-Typescript/commits/master)
+[![Forks](https://img.shields.io/github/forks/ODGodinho/ODGEslintPlugin?color=CD4D34)](https://github.com/ODGodinho/ODGEslintPlugin/network/members)
+![Repository size](https://img.shields.io/github/repo-size/ODGodinho/ODGEslintPlugin)
+[![GitHub last commit](https://img.shields.io/github/last-commit/ODGodinho/ODGEslintPlugin)](https://github.com/ODGodinho/ODGEslintPlugin/commits/master)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen)](https://opensource.org/licenses/MIT)
-[![StyleCI](https://github.styleci.io/repos/562306382/shield?branch=main)](https://github.styleci.io/repos/562306382?branch=main)
+[![StyleCI](https://github.styleci.io/repos/640428706/shield?branch=main)](https://github.styleci.io/repos/640428706?branch=main)
 
 </p>
 
@@ -30,14 +30,8 @@
 - [🎇 Benefits](#-benefits)
 - [📗 Libraries](#-libraries)
 - [📁 Dependencies](#-dependencies)
-- [⏩ Get Started](#-get-started)
-  - [🔘 Use Template](#-use-template)
-  - [🔑 Configure Github Secrets](#-configure-github-secrets)
-    - [🙈 Create Github Token](#-create-github-token)
-    - [🍀 Code Coverage](#-code-coverage)
-    - [📦 Create NPM Token](#-create-npm-token)
-    - [🔐 Create project Environment](#-create-project-environment)
-  - [💻 Prepare to develop](#-prepare-to-develop)
+  - [💻 Rules](#-rules)
+    - [No Inconsistent Docblock](#no-inconsistent-docblock)
   - [📍 Start Project](#-start-project)
   - [📨 Build and Run](#-build-and-run)
   - [🧪 Teste Code](#-teste-code)
@@ -76,53 +70,55 @@
 
 ---
 
-### 🔘 Use Template
+### 💻 Rules
 
-Click in use this template button and clone your template project
+#### No Inconsistent Docblock
 
-![Use Template](https://raw.githubusercontent.com/ODGodinho/Stanley-TheTemplate/main/public/images/UseTemplate.png)
+Validate Docblock with typescript types
 
-### 🔑 Configure Github Secrets
+👍 Examples of correct code
 
-#### 🙈 Create Github Token
+```typescript
+/**
+ * Valid Param
+ *
+ * @param {string} param
+ */
+function name(param: string) {
 
-Before create new GITHUB_TOKEN in
+}
 
-- <https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token>
+/**
+ * Valid return
+ *
+ * @returns {string}
+ */
+function name2(): string {
 
-#### 🍀 Code Coverage
+}
+```
 
-Add Code Coverage support in your project
+👎 Examples of incorrect code
 
-1. Install CodeCov in your account <https://github.com/apps/codecov>
-2. Enter In <https://app.codecov.io/gh/+> and search your repository
-3. Click `setup repo`
-4. Copy CODECOV_TOKEN and create a secret called CODECOV_TOKEN
+```typescript
+/**
+ * Valid Param
+ *
+ * @param {number} param
+ */
+function name(param: string) {
 
-#### 📦 Create NPM Token
+}
 
-if you want to generate packages create a secret called IS_PACKAGE = true AND create new NPM_TOKEN in
+/**
+ * Valid return
+ *
+ * @returns {number}
+ */
+function name2(): string {
 
-- <https://docs.npmjs.com/creating-and-viewing-access-tokens>
-
-#### 🔐 Create project Environment
-
-- On GitHub.com, navigate to the main page of the repository.
-- Under your repository name, click `⚙️ Settings`.
-![Github Setting images example](https://docs.github.com/assets/cb-27528/images/help/repository/repo-actions-settings.png)
-- In the "Security" section of the sidebar, select `✳️ Secrets`, then click Actions.
-- Click New repository secret.
-- Type a name with: **GH_TOKEN**
-- Enter with your access secret token `ghp_Dsfde....`
-- Click Add secret.
-- If you are going to publish package:
-  - create **IS_PACKAGE** = `true`
-  - create **NPM_TOKEN** = `npm_szxw......`
-  - create **CODECOV_TOKEN** = `00000000-0000-0000-0000-000000000000`
-
-### 💻 Prepare To Develop
-
-Copy `.env.example` to `.env` and add the values according to your needs.
+}
+```
 
 ### 📍 Start Project
 

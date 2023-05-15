@@ -1,8 +1,8 @@
 {
-    "name": "stanley-the-template-typescript",
+    "name": "@odg/eslint-plugin",
     "version": "0.0.0",
-    "description": "Stanley TheTemplate for typescript project",
-    "main": "dist/index.js",
+    "description": "ODG Linter custom rules plugins",
+    "main": "index.js",
     "types": "dist/index.d.ts",
     "homepage": "",
     "scripts": {
@@ -48,26 +48,37 @@
     },
     "files": [
         "./dist/",
+        "./index.js",
         "./README.md"
     ],
     "author": "Dragons Gamers <https://www.linkedin.com/in/victor-alves-odgodinho>",
     "license": "MIT",
+    "resolutions": {
+        "@odg/eslint-plugin": "link:."
+    },
     "devDependencies": {
         "@odg/eslint-config": "*",
         "@odg/tsconfig": "*",
+        "@types/eslint": "^8.37.0",
         "@types/jest": "^29.5.1",
         "@types/node": "^18",
         "concurrently": "^8.0.1",
-        "eslint": "*",
+        "eslint": "^8.40.0",
         "husky": "^8.0.3",
         "jest": "^29.5.0",
         "lint-staged": "^13.2.2",
         "rimraf": "^5.0.0",
-        "semantic-release": "^20.1.0",
+        "semantic-release": "^21.0.2",
         "ts-jest": "^29.1.0",
         "ts-node": "^10.9.1",
         "tsc-alias": "^1.8.3",
         "typescript": "^5.0.4"
     },
-    "dependencies": {}
+    "dependencies": {
+        "@es-joy/jsdoccomment": "*",
+        "@odg/eslint-plugin": "link:.",
+        "@typescript-eslint/types": "*",
+        "@typescript-eslint/utils": "*",
+        "comment-parser": "*"
+    }
 }

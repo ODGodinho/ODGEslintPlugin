@@ -1,9 +1,12 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
+        "module": "NodeNext",
+        "moduleResolution": "node",
         "outDir": "./dist",
         "paths": {
-            "#types/*": [ "./@types/*" ]
+            "#types/*": [ "src/@types/*" ],
+            "~/*": [ "src/*" ]
         },
         "rootDirs": [
             ".",

@@ -1,3 +1,9 @@
-import { exampleStanleyTemplate } from "./example";
+import { rule } from "./rules/no-inconsistent-docblock";
 
-exampleStanleyTemplate();
+// eslint-disable-next-line import/no-commonjs, unicorn/prefer-module
+export const index = {
+    root: true,
+    rules: {
+        "no-inconsistent-docblock": rule,
+    },
+};
