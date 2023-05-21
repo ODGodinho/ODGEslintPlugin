@@ -1,7 +1,8 @@
 {
     "conventionalCommits.scopes": [
         "Paths",
-        "Test"
+        "Test",
+        "Init"
     ],
     "typescript.preferences.importModuleSpecifier": "non-relative"
 }
