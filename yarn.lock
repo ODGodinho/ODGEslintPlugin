@@ -963,11 +963,12 @@
     "@octokit/openapi-types" "^17.1.2"
 
 "@odg/eslint-config@*":
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/@odg/eslint-config/-/eslint-config-1.15.1.tgz#56fd6bc8b2861ca1de433d18c325fc05388ad8c8"
-  integrity sha512-WaxovTwlVBuoROEVD1y8ARfJncXSzT+UzgtjqIm2zQFf+sTJ+q4xLshG7XOKAvxxMjUm/iPJQpq2fe9KqppRAw==
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/@odg/eslint-config/-/eslint-config-1.16.0.tgz#839aa1a2ddc239b6f6b8b937a4d4f077eff53d5c"
+  integrity sha512-m192wyIbE32WOu33OBtZaNlMLCGiu08jN0ldgY344n5w2tgh/BHMgS/A/KPjRdwD4AUjLhf0evZIFtPXX0D1qg==
   dependencies:
     "@babel/core" "*"
+    "@odg/eslint-plugin" "*"
     "@typescript-eslint/eslint-plugin" "*"
     "@typescript-eslint/parser" "*"
     any-eslint-parser "^1.0.1"
@@ -996,6 +997,9 @@
     eslint-plugin-unicorn "^47.0.0"
     eslint-plugin-yml "^1.7.0"
     toml-eslint-parser "^0.6.0"
+
+"@odg/eslint-plugin@*":
+  version "0.0.0"
 
 "@odg/eslint-plugin@link:.":
   version "0.0.0"
