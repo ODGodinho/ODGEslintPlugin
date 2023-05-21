@@ -1009,7 +1009,6 @@
 
 "@odg/eslint-plugin@*":
   version "0.0.0"
-  uid ""
 
 "@odg/eslint-plugin@link:.":
   version "0.0.0"
