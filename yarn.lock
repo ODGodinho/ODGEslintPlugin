@@ -972,9 +972,9 @@
     "@octokit/openapi-types" "^17.2.0"
 
 "@odg/eslint-config@*":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@odg/eslint-config/-/eslint-config-1.16.0.tgz#839aa1a2ddc239b6f6b8b937a4d4f077eff53d5c"
-  integrity sha512-m192wyIbE32WOu33OBtZaNlMLCGiu08jN0ldgY344n5w2tgh/BHMgS/A/KPjRdwD4AUjLhf0evZIFtPXX0D1qg==
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/@odg/eslint-config/-/eslint-config-1.17.0.tgz#4c78dc4c2c45294a732c63a4ecde3240e0674f9e"
+  integrity sha512-QzxPFpyI8hbbdeBSfNy9rBYUIWWjTZESMRMuqRFXwEdrlHpGKcUwUzgFR2wIdv9HlBvuFbwMw6lAFfKEWS3qWg==
   dependencies:
     "@babel/core" "*"
     "@odg/eslint-plugin" "*"
@@ -985,6 +985,7 @@
     eslint-import-resolver-typescript "^3.5.5"
     eslint-plugin-antfu "^0.38.6"
     eslint-plugin-array-func "^3.1.8"
+    eslint-plugin-better-max-params "^0.0.1"
     eslint-plugin-file-progress "^1.3.0"
     eslint-plugin-filenames "^1.3.2"
     eslint-plugin-html "^7.1.0"
@@ -1012,7 +1013,6 @@
 
 "@odg/eslint-plugin@link:.":
   version "0.0.0"
-  uid ""
 
 "@odg/tsconfig@*":
   version "1.1.0"
@@ -2752,6 +2752,11 @@ eslint-plugin-array-func@^3.1.8:
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/eslint-plugin-array-func/-/eslint-plugin-array-func-3.1.8.tgz#9dd635627f604e1ed6faf0c5525a8f84d48ed599"
   integrity sha512-BjnbJvw+knaHgVddIL3q5xYcoqAZoK8wOdT7QF+mkvSAjXdZCdhL0z71Y7oRtgXA8BpN9QLJ2uHgD3I6ymlbOw==
+
+eslint-plugin-better-max-params@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-better-max-params/-/eslint-plugin-better-max-params-0.0.1.tgz#8d188cba3465a17c18c5206098925d1dcf284ddd"
+  integrity sha512-W9od+HV5KpXEGI1A+4ZYGSkceyX50eAGGSandP/TFPUIu781KoOu2Nru8aOE2SbEr+8stmhfsYmpu+iD9vl1NA==
 
 eslint-plugin-es@^4.1.0:
   version "4.1.0"
