@@ -58,6 +58,7 @@
     },
     "devDependencies": {
         "@odg/eslint-config": "*",
+        "@odg/eslint-plugin": "link:.",
         "@odg/tsconfig": "*",
         "@types/eslint": "^8.37.0",
         "@types/jest": "^29.5.1",
@@ -76,7 +77,6 @@
     },
     "dependencies": {
         "@es-joy/jsdoccomment": "*",
-        "@odg/eslint-plugin": "link:.",
         "@typescript-eslint/types": "*",
         "@typescript-eslint/utils": "*",
         "comment-parser": "*"
